@@ -1,0 +1,21 @@
+﻿@model Blog
+@{
+    ViewData["Title"] = "Detail";
+}
+
+<div class="container my-5">
+    <div class="card">
+        <div class="card-header">
+            Category detail
+        </div>
+        <div class="card-body">
+            <p class="card-text">@Model.Title</p>
+            <p class="card-text">@Model.Desc</p>
+            <p class="card-text ">
+                <img class="w-25 h-25" src="~/img/@Model.Image" />
+            </p>
+        </div>
+    </div>
+</div>
+
+

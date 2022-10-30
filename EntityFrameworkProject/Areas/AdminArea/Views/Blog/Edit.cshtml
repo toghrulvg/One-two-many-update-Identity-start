@@ -1,0 +1,51 @@
+﻿@using EntityFrameworkProject.ViewModels
+@model Blog
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<div class="main-panel">
+    <div class="content-wrapper">
+        <div class="row">
+            <span class="text-danger">@ViewBag.Message</span>
+            <div class="col-md-12 grid-margin stretch-card">
+                <div class="card">
+                    <div class="card-body">
+                        <p class="card-description">
+                            Product
+                        </p>
+                        <form asp-controller="Blog" asp-action="Edit" enctype="multipart/form-data" class="forms-sample" method="post">
+
+                            <div class="form-group">
+                                <label asp-for="@Model.Desc">Description</label>
+                                <input class="form-control" asp-for="@Model.Desc">
+                                <span asp-validation-for="@Model.Desc" class="text-danger my-1"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="@Model.Title">Title</label>
+                                <input class="form-control" asp-for="@Model.Title">
+                                <span asp-validation-for="@Model.Title" class="text-danger my-1"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="@Model.Photo">Photo</label>
+                                <input class="form-control" asp-for="@Model.Photo">
+                                <span class="text-danger" asp-validation-for="@Model.Photo"></span>
+                            </div>
+                            <button type="submit" class="btn btn-primary mr-2">Submit</button>
+                            <a asp-controller="Blog" asp-action="Index" class="btn btn-light">Cancel</a>
+                        </form>
+                        <p class="card-text ">
+                            <img class="w-25 h-25 my-5" src="~/img/@Model.Image" />
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+@section Scripts{
+    <partial name="_ValidationPartial" />
+}
+
